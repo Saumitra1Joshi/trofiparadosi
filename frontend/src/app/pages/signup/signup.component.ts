@@ -10,7 +10,7 @@ import Swal from 'sweetalert2';
 export class SignupComponent implements OnInit {
 
   public user = {
-    userName: '',
+    username: '',
     password: '',
     dOB: "",
     firstName: '',
@@ -32,7 +32,7 @@ export class SignupComponent implements OnInit {
 
   formSubmit() {
     console.log(this.user);
-    if(this.user.userName==''||this.user.phoneNo==''||this.user.userName==null)
+    if(this.user.username==''||this.user.phoneNo==''||this.user.username==null)
     {
       // alert("Some detail is missing")
       this._snackbar.open("Username is required",'',{
