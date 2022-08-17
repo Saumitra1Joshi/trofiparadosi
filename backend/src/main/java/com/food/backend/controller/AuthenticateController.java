@@ -1,5 +1,7 @@
 package com.food.backend.controller;
 
+import java.security.Principal;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -8,6 +10,7 @@ import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.food.backend.config.JwtUtils;
 import com.food.backend.entity.JwtRequest;
 import com.food.backend.entity.JwtResponse;
+import com.food.backend.entity.User;
 import com.food.backend.helper.UserNotFoundException;
 import com.food.backend.service.impl.UserDetailsServiceImpl;
 
@@ -66,5 +70,11 @@ public class AuthenticateController {
 	        } catch (BadCredentialsException e) {
 	            throw new Exception("Invalid Credentials " + e.getMessage());
 	        }
+	    }
+	    //return the details of current user
+	    @GetMapping("/current-user")
+	    public User getCurrentUser(Principal principal) {
+	        return ((User) this.userDetailsService.loadUserByUsername(principal.getName()));
+
 	    }
 }

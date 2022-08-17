@@ -5,6 +5,7 @@ import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.food.backend.entity.Role;
 import com.food.backend.entity.User;
 import com.food.backend.entity.UserRole;
+import com.food.backend.helper.UserFoundException;
 import com.food.backend.helper.UserNotFoundException;
 import com.food.backend.service.UserService;
 
@@ -28,14 +30,17 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	
+	@Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
 	
 	@PostMapping("/")
 	public User createUser(@RequestBody User user) throws Exception
 	{
 		
 		Set<UserRole> roles=new HashSet<>();
-		
-		
+		//encoding password using bcrypt
+		user.setPassword(this.bCryptPasswordEncoder.encode(user.getPassword()));
+		user.setProfile("default.png");
 		Role role=new Role();
 		role.setRoleId(45L);
 		role.setRoleName("Normal");
@@ -51,13 +56,13 @@ public class UserController {
 		return this.userService.createUser(user, roles);
 	}
 	
-	@GetMapping("/{userName}")
+	@GetMapping("/{username}")
 	public User getUser(@PathVariable("username") String username){
 		return this.userService.getUser(username);
 	}
 	
-	 @ExceptionHandler(UserNotFoundException.class)
-	    public ResponseEntity<?> exceptionHandler(UserNotFoundException ex) {
+	 @ExceptionHandler(UserFoundException.class)
+	    public ResponseEntity<?> exceptionHandler(UserFoundException ex) {
 	        return ResponseEntity.ok(ex.getMessage());
 	    }
 	

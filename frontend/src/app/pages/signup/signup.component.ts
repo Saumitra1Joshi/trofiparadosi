@@ -10,7 +10,7 @@ import Swal from 'sweetalert2';
 export class SignupComponent implements OnInit {
 
   public user = {
-    userName: '',
+    username: '',
     password: '',
     dOB: "",
     firstName: '',
@@ -32,10 +32,10 @@ export class SignupComponent implements OnInit {
 
   formSubmit() {
     console.log(this.user);
-    if(this.user.userName==''||this.user.phoneNo==''||this.user.userName==null)
+    if(this.user.username==''||this.user.phoneNo==''||this.user.username==null)
     {
       // alert("Some detail is missing")
-      this._snackbar.open("Username is required",'',{
+      this._snackbar.open("Please fill all details",'',{
         duration:3000,
       });
       return;
@@ -48,11 +48,12 @@ export class SignupComponent implements OnInit {
         console.log(data);
         Swal.fire('Success','Welcome '+data.firstName+' To Trofi Parodosi','success');
       },
-      (error)=>{
+      (error) => {
         //error
         console.log(error);
-        this._snackbar.open("Oops Something Went Wrong",'',{
-          duration:3000,
+        // alert('something went wrong');
+        this._snackbar.open(error.error.text, '', {
+          duration: 3000,
         });
       }
     );

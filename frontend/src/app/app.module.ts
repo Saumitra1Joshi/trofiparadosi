@@ -20,13 +20,20 @@ import { HomeComponent } from './pages/home/home.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
+import { authInterceptorProviders } from './services/auth.interceptor';
+import { LoginService } from './services/login.service';
+import { UserService } from './services/user.service';
+import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
+import { UserdashboardComponent } from './pages/user/userdashboard/userdashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     LoginComponent,
     SignupComponent,
-    HomeComponent
+    HomeComponent,
+    DashboardComponent,
+    UserdashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +50,7 @@ import {MatIconModule} from '@angular/material/icon';
     MatToolbarModule,
     MatIconModule
   ],
-  providers: [],
+  providers: [authInterceptorProviders,LoginService,UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

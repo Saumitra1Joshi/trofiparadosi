@@ -4,10 +4,33 @@
    </button>
    <span>Food Express</span>
    <span class="example-spacer"></span>
-   <button (click)="OnLoginClick()" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+   <button 
+    *ngIf="!isLoggedIn"
+   (click)="OnLoginClick()" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
      <mat-icon>login</mat-icon>
    </button>
-   <button (click)="OnRegisterClick()" mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+   <button *ngIf="!isLoggedIn"
+   (click)="OnRegisterClick()" mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
     <mat-icon>app_registration</mat-icon>
   </button>
+
+  
+  <a
+   (click)="logout()"
+    *ngIf="isLoggedIn"
+    mat-icon-button
+    class="example-icon favorite-icon mr20 ml20"
+    aria-label="Example icon-button with heart icon"
+  >
+    Logout
+  </a>
+  <button
+  *ngIf="isLoggedIn && user"
+  class="example-icon favorite-icon ml20"
+  mat-button
+  aria-label="Example icon-button with heart icon"
+>
+  {{ user.username }}
+
+</button>
  </mat-toolbar>
