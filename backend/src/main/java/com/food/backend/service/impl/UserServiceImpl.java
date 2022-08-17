@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.food.backend.entity.User;
 import com.food.backend.entity.UserRole;
+import com.food.backend.helper.UserFoundException;
 import com.food.backend.repo.RoleRepository;
 import com.food.backend.repo.UserRepository;
 import com.food.backend.service.UserService;
@@ -29,7 +30,7 @@ public class UserServiceImpl implements UserService{
 			try {
 				{
 					System.out.println("User is already there!!");
-					throw new Exception("User already present");
+					throw new UserFoundException();
 				}
 			} catch (Exception e) {
 				// TODO Auto-generated catch block

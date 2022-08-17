@@ -35,7 +35,7 @@ export class SignupComponent implements OnInit {
     if(this.user.username==''||this.user.phoneNo==''||this.user.username==null)
     {
       // alert("Some detail is missing")
-      this._snackbar.open("Username is required",'',{
+      this._snackbar.open("Please fill all details",'',{
         duration:3000,
       });
       return;
@@ -48,11 +48,12 @@ export class SignupComponent implements OnInit {
         console.log(data);
         Swal.fire('Success','Welcome '+data.firstName+' To Trofi Parodosi','success');
       },
-      (error)=>{
+      (error) => {
         //error
         console.log(error);
-        this._snackbar.open("Oops Something Went Wrong",'',{
-          duration:3000,
+        // alert('something went wrong');
+        this._snackbar.open(error.error.text, '', {
+          duration: 3000,
         });
       }
     );
