@@ -1,0 +1,13 @@
+
+  <div class="card-container">
+    <div *ngFor="let tempdish of dishes">
+        <div class="card text-white bg-dark" style="width: 18rem;">
+            <img class="card-img-top" src="{{tempdish.imageUrl}}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title" #rname>{{tempdish.name}}</h5>
+                <p class="card-text">{{tempdish.unitPrice}}</p>
+                <a routerLink="/book/" class="btn btn-primary">Order Now</a>
+            </div>
+        </div>
+    </div>
+  </div>

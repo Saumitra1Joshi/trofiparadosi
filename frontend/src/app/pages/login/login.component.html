@@ -1,4 +1,5 @@
-<div class="bootstrap-wrapper">
+<!-- <body>
+   <div class="bootstrap-wrapper">
     <div class="container">
         <div class="row" style="margin-top: 20px;">
             <div class="col-md-6 offset-md-3">
@@ -8,7 +9,7 @@
                 </div>
                 <h2 class="text-center">Login Here !!</h2>
                 <form (ngSubmit)="formSubmit()">
-                    <!-- Username field -->
+                    
                     <mat-form-field class="full-width" appearance="fill">
                         <mat-label>Username</mat-label>
                         <input 
@@ -18,7 +19,7 @@
                         <mat-hint>Valid Username</mat-hint>
                     </mat-form-field>
                     <br><br>
-                    <!-- Password field -->
+                    
                     <mat-form-field class="full-width" appearance="fill">
                         <mat-label>Password</mat-label>
                         <input
@@ -36,5 +37,32 @@
                 </mat-card>
             </div>
         </div>
-    </div>
+    </div> 
 </div>
+</body> -->
+
+<body>
+    <div class="form">
+        <h2>Login</h2>
+        <form (ngSubmit)="formSubmit()">
+            <div class="input">
+                <div class="inputbox">
+                    <label>Username</label>
+                    <input type="text" [(ngModel)]="loginData.username"
+                    name="username" placeholder="example@gmail.com">
+                </div>
+                <div class="inputbox">
+                    <label>Password</label>
+                    <input required type="password" [(ngModel)]="loginData.password"
+                    name="password" placeholder="*****">
+                </div>
+                <div class="inputbox">
+                    <label>Username</label>
+                    <input type="submit" name="" value="Login">
+                </div>
+            </div>
+            <p class="forget">Don't have an account?  <a href="signup">Click Here</a></p>
+        </form>
+        
+    </div>
+</body>

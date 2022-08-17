@@ -15,7 +15,6 @@ import {MatInputModule} from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-import { HomeComponent } from './pages/home/home.component';
 
 import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -25,15 +24,21 @@ import { LoginService } from './services/login.service';
 import { UserService } from './services/user.service';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { UserdashboardComponent } from './pages/user/userdashboard/userdashboard.component';
+import { DishlistComponent } from './pages/user/dishlist/dishlist.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { RestaurantlistComponent } from './pages/user/restaurantlist/restaurantlist.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     LoginComponent,
     SignupComponent,
-    HomeComponent,
     DashboardComponent,
-    UserdashboardComponent
+    UserdashboardComponent,
+    DishlistComponent,
+    ProfileComponent,
+    RestaurantlistComponent
   ],
   imports: [
     BrowserModule,
