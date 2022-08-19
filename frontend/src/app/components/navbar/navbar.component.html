@@ -1,5 +1,5 @@
 <mat-toolbar color="primary">
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <button (click)="OnDeliveryClick()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
      <mat-icon>delivery_dining</mat-icon>
    </button>
    <span>Food Express</span>
@@ -25,6 +25,7 @@
     Logout
   </a>
   <button
+  (click)="OnProfile()"
   *ngIf="isLoggedIn && user"
   class="example-icon favorite-icon ml20"
   mat-button
@@ -33,4 +34,20 @@
   {{ user.username }}
 
 </button>
+
+<app-search *ngIf="isLoggedIn && user"></app-search>
+
+<!-- <form class="form-header" onsubmit="return false;" method="GET" *ngIf="isLoggedIn && user">
+  <input class="au-input au-input-xl" type="text" name="search" placeholder="Search for data ..." />
+  <button class="au-btn-submit" type="submit">
+    Search
+  </button>
+</form>-->
+<app-cardstatus  *ngIf="isLoggedIn && user"></app-cardstatus>
+<!-- <div class="cart-area d-n" *ngIf="isLoggedIn && user">
+  <a href="#">
+    <div class="total">19.22 <span> 2</span> </div> <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+  </a>
+</div> -->
+
  </mat-toolbar>

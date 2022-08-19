@@ -1,0 +1,19 @@
+<div class="detail-section">
+    <div class="container-fluid">
+
+        <img src="{{ dish?.imageUrl }}" class="detail-img">
+
+        <h3>{{ dish?.name }}</h3>
+        <div class="price">{{ dish?.unitPrice | currency:'USD' }}</div>
+        <button (click)="addToCart()" class="btn btn-primary btn-sm">Add to cart</button>
+
+
+        <hr>
+        <h4>Description</h4>
+        <p>{{ dish?.description }}</p>
+
+        <h5>Ratings:{{dish?.ratings}}</h5>
+
+        <a routerLink="/dishes" class="mt-5">Back to Menu</a>
+    </div>
+</div>

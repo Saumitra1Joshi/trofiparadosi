@@ -25,6 +25,13 @@ import { LoginService } from './services/login.service';
 import { UserService } from './services/user.service';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { UserdashboardComponent } from './pages/user/userdashboard/userdashboard.component';
+import { DisheslistComponent } from './pages/user/disheslist/disheslist.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { RestaurantlistComponent } from './pages/user/restaurantlist/restaurantlist.component';
+import { SearchComponent } from './components/search/search.component';
+import { DishdetailsComponent } from './pages/user/dishdetails/dishdetails.component';
+import { CardstatusComponent } from './components/cardstatus/cardstatus.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +40,13 @@ import { UserdashboardComponent } from './pages/user/userdashboard/userdashboard
     SignupComponent,
     HomeComponent,
     DashboardComponent,
-    UserdashboardComponent
+    UserdashboardComponent,
+    DisheslistComponent,
+    ProfileComponent,
+    RestaurantlistComponent,
+    SearchComponent,
+    DishdetailsComponent,
+    CardstatusComponent
   ],
   imports: [
     BrowserModule,

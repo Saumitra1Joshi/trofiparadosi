@@ -35,4 +35,12 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(["login"]);
     this.login.loginStatusSubject.next(false);
   }
+  public OnProfile()
+  {
+    this.router.navigate(["profile"])
+  }
+  OnDeliveryClick()
+  {
+    this.router.navigate(["userdashboard"]);
+  }
 }
