@@ -1,0 +1,23 @@
+<body>
+    <h1>Items Available</h1>
+
+    <div class="card-container">
+        <div *ngFor="let tempdish of dishes">
+            <div class="card text-white bg-dark" style="width: 18rem;">
+                    <img class="card-img-top" src="{{tempdish.imageUrl }}" alt="Card image cap">
+                <div class="card-body">
+                    <div class="title">
+                        <a routerLink="/dishes/{{ tempdish.dishid }}" routerLinkActive="active-link">
+                            <h5 class="card-title" #rname>{{ tempdish.name }}</h5>
+                        </a>
+                    </div>
+                    
+                    <p class="card-text price">₹{{ tempdish.unitPrice }}</p>
+                    <!-- <p class="card-text">{{ tempdish.description }}</p> -->
+                    <p class="card-text">Rating - {{ tempdish.ratings}} / 5</p>
+                    <a (click)="addToCart(tempdish)" class="btn btn-primary">Add To Cart</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

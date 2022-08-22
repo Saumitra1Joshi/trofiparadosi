@@ -1,0 +1,72 @@
+.detail-section{
+    margin-top: 100px;
+    text-align: center;
+    border: 5px solid rgb(255, 0, 242);
+    width: 40%;
+    border-radius: 20%;
+    box-shadow: -5px -5px 15px rgb(255, 0, 242),
+                5px 5px 15px rgb(255, 0, 242);
+    margin-bottom: 50px;
+    margin-left: 30%;
+    
+}
+
+body{
+    min-height: 100%;
+    min-width: 100%;
+    position: absolute;
+    background-color: black;
+    text-align: center;
+    margin-top: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+img{
+    border-radius: 25%;
+    width: 40%;
+    height: auto;
+    margin-top: 30px;
+}
+
+h3{
+    margin-top: 20px;
+    font-weight: 700;
+    color: red;
+    font-size: larger;
+}
+
+button{
+    margin-top: 20px;
+    font-weight: 700;
+    font-size: medium;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.price{
+    font-weight: 700;
+    color: rgb(0, 230, 0);
+}
+
+h4{
+    font-weight: 700;
+    color: violet;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+p{
+    color:aqua;
+    font-weight: 700;
+}
+
+h5{
+    color: yellow;
+    font-weight: 700;
+    font-size: large;
+}
+
+
+.menu-button{
+    margin-bottom: 20px;
+    font-weight: 700;
+}

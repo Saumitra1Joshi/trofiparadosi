@@ -12,7 +12,7 @@ body{
     min-height: 30rem;
     background: #101014;
     height: auto;
-    padding-bottom: 150px;
+    
 }
 
 .form{
@@ -25,11 +25,20 @@ body{
     text-align: center;
     box-shadow: -5px -5px 10px rgb(255, 0, 242),
                 5px 5px 15px rgb(251, 0, 255);
+    margin-top: 75px;
+}
+
+img{
+    z-index: 1;
+    opacity: 0.1;
+    width: 100%;
+    height: 100%;
+    position: absolute;
 }
 
 .form h2{
     color: #c7c7c7;
-    font-weight: 500;
+    font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 2px;
 }

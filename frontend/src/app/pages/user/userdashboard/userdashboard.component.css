@@ -1,13 +1,22 @@
 body, html{
     background-color: black;
-    height: auto;
+    min-height: 100%;
+    position: absolute;
+    width: 100%;
 }
 h1{
     color: white;
-    margin-left: 20px;
-    margin-top: 20px;
+    text-align: center;
+    font-weight: 700;
+    font-size: xx-large;
+    margin-top: 40px;
     margin-bottom: 20px;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+h2{
+    font-size: 40px;
+    margin-bottom: 5px;
 }
 
 .navbar{
@@ -25,6 +34,13 @@ h1{
     font-weight: 700;
 }
 
+.carousel-caption{
+    top: 23%;
+    font-size: 45px;
+    color: white;
+
+
+}
 .card-container{
     display:grid;
     grid-template-columns: 20% 20% 20% 20%;

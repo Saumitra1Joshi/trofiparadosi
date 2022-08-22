@@ -29,11 +29,16 @@ private String state;
 private String country;
 private String phoneNo;
 private String profile;
+
 private boolean enabled =true;
 
 @OneToMany(cascade=CascadeType.ALL,fetch=FetchType.EAGER,mappedBy="user")
 @JsonIgnore
 private Set<UserRole> userRoles=new HashSet<>();
+
+
+
+
 
 public User() {
 }

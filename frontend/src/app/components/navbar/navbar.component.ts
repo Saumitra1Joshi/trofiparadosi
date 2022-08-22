@@ -34,5 +34,16 @@ export class NavbarComponent implements OnInit {
     this.login.logout();
     this.router.navigate(["login"]);
     this.login.loginStatusSubject.next(false);
+    confirm("Are you sure you want to log out?");
+    window.location.reload();
+
+  }
+  public OnProfile()
+  {
+    this.router.navigate(["profile"])
+  }
+  OnDeliveryClick()
+  {
+    this.router.navigate(["userdashboard"]);
   }
 }

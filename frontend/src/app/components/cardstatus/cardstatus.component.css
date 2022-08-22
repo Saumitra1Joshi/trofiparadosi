@@ -1,0 +1,25 @@
+.red{
+    color: red;
+    font-weight: bold;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.green{
+    color: rgb(0, 240, 0);
+    font-weight: bold;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.separate{
+    color: rgb(239, 0, 219);
+    font-weight: bolder;
+}
+
+svg{
+    margin-bottom: 4px;
+    margin-right: 2px;
+    color: rgb(215, 253, 0);
+    font-weight: bolder;
+}

@@ -147,7 +147,9 @@ public class Dishes {
 			this.unitsInStock = unitsInStock;
 		}
 
-		public String isRatings() {
+		
+
+		public String getRatings() {
 			return ratings;
 		}
 

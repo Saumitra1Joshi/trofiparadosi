@@ -34,15 +34,16 @@
   }
   
   p{
-    color: cyan;
+    color: rgb(255, 0, 0);
     font-size: medium;
     text-align: left;
+    font-weight: 700;
   }
 
   img{
     height: 200px;
     width: auto;
-    border-radius: 100%;
+    border-radius: 20%;
     margin-bottom: 25px;
   }
 

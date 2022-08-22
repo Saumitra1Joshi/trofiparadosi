@@ -1,0 +1,73 @@
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 85%;
+    margin: auto;
+    text-align: center;
+    background-color: transparent;
+    box-shadow: -5px -5px 10px rgb(115, 0, 255),
+                5px 5px 15px rgb(115, 0, 255);
+    border-radius: 10%;
+    padding: 40px;
+    margin-top: 65px;
+}
+  
+  style{
+    color: blue;
+  }
+
+  i{
+    margin-right: 25px;
+  }
+
+  a {
+    text-decoration: none;
+    font-size: 22px;
+    color: black;
+  }
+  
+  button:hover, a:hover {
+    opacity: 0.7;
+  }
+
+ html, body{
+    background-color: black;
+    height: auto;
+    padding-bottom: 10%;
+    padding-top: 5%;
+  }
+
+  h1{
+    color: cyan;
+  }
+  
+  p{
+    color: rgb(255, 0, 0);
+    font-size: medium;
+    text-align: left;
+    font-weight: 700;
+  }
+
+  img{
+    height: 200px;
+    width: auto;
+    border-radius: 20%;
+    margin-bottom: 25px;
+  }
+
+  span{
+    color: rgb(0, 228, 0);
+  }
+
+  h1{
+    margin-top: 50px;
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    font-size: xx-large;
+  }
+
+  .contactus{
+    display: grid;
+    grid-template-columns: 33% 33% 34%;
+  
+  }

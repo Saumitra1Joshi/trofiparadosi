@@ -1,20 +1,32 @@
+<html>
 <body>
-  
-      <div class="carousel" id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <div class="carousel" id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
         </ol>
         <div class="carousel-inner">
-          <div class="carousel-item active">
+          <div class="carousel-item active" data-bs-interval="2000">
             <img class="d-block w-100" src="https://auspost.com.au/content/dam/corp/travel-essentials/destination-guides/italy/photo-antipasto-platter-italian-food.jpg" alt="First slide">
+            <div class="carousel-caption d-none d-md-block">
+                <h2>10% of on all continental food items<br><br> (Offers valid only till 25 August)</h2>
+                <br><h5>Terms & Conditions Apply</h5>
+            </div>
           </div>
-          <div class="carousel-item">
+          <div class="carousel-item" data-bs-interval="2000">
             <img class="d-block w-100" src="https://wallpapercave.com/wp/wp3724325.jpg" alt="Second slide">
+            <div class="carousel-caption d-none d-md-block">
+                <h2>The Great Mid Year Sale Is Here <br><br>(Offers valid only till 30 August)</h2>
+                <br><h5>Terms & Conditions Apply</h5>
+            </div>
           </div>
-          <div class="carousel-item">
+          <div class="carousel-item" data-bs-interval="2000">
             <img class="d-block w-100" src="https://wallup.net/wp-content/uploads/2019/10/511991-indian-food-india.jpg" alt="Third slide">
+            <div class="carousel-caption d-none d-md-block">
+              <h2>Exciting New Offers for Trophi Paradosi Legacy Users<br><br>(Offers valid only till 15 September)</h2>
+              <br><h5>Terms & Conditions Apply</h5>
+          </div>
           </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -29,8 +41,13 @@
 
       <h1>Restaurants Near You</h1>
 
-
-
-      <app-restaurantlist></app-restaurantlist>
-      
+      <div class="page-wrapper">
+        <app-restaurantlist></app-restaurantlist>
+        <!-- END MENU SIDEBAR-->
+        <div class="page-container">
+            <!-- <app-disheslist></app-disheslist> -->
+            <router-outlet></router-outlet>
+        </div>
+      </div>
 </body>
+</html>

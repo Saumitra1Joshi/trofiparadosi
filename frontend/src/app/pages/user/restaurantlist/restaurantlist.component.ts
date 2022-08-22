@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { RestaurantService } from 'src/app/services/restaurant.service';
-import { Restaurants } from '../restaurants';
+import { DishService } from 'src/app/services/dish.service';
+import { restaurant } from '../restaurant';
+import * as $ from 'jquery';
+
 
 @Component({
   selector: 'app-restaurantlist',
@@ -8,22 +10,38 @@ import { Restaurants } from '../restaurants';
   styleUrls: ['./restaurantlist.component.css']
 })
 export class RestaurantlistComponent implements OnInit {
+
+  restaurant:restaurant[]=[];
   
-  restaurants: Restaurants[] = [];
-  constructor(private restaurantService: RestaurantService) { }
+  constructor(private dishService:DishService) { }
 
   ngOnInit(): void {
-    this.listdishes();
+    this.Restaurantlist();
+    
+  }
+  Restaurantlist() {
+    this.dishService.getrestaurantlist().subscribe(
+      data => {
+        console.log('Restaurant List=' + JSON.stringify(data));
+        this.restaurant = data;
+      }
+    );
   }
 
-  listdishes()
+  resfilter(therestype:string)
   {
-    this.restaurantService.getDishList().subscribe(
-      data=>{
-        this.restaurants=data;
+    if(therestype=='Both')
+    {
+      this.Restaurantlist();
+    }
+    this.dishService.searchRestaurant(therestype).subscribe(
+      data => {
+        // console.log('Restaurant List=' + JSON.stringify(data));
+        this.restaurant = data;
       }
-    )
+    );
   }
+
 
 
 }

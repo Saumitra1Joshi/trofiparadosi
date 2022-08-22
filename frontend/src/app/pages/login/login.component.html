@@ -1,47 +1,5 @@
-<!-- <body>
-   <div class="bootstrap-wrapper">
-    <div class="container">
-        <div class="row" style="margin-top: 20px;">
-            <div class="col-md-6 offset-md-3">
-                <mat-card>
-                <div class="container text-center">
-                    <img src="../../../assets/th.jpg" alt="" width="160" height="145" />
-                </div>
-                <h2 class="text-center">Login Here !!</h2>
-                <form (ngSubmit)="formSubmit()">
-                    
-                    <mat-form-field class="full-width" appearance="fill">
-                        <mat-label>Username</mat-label>
-                        <input 
-                        [(ngModel)]="loginData.username"
-                        name="username"
-                        required matInput placeholder="Enter here" />
-                        <mat-hint>Valid Username</mat-hint>
-                    </mat-form-field>
-                    <br><br>
-                    
-                    <mat-form-field class="full-width" appearance="fill">
-                        <mat-label>Password</mat-label>
-                        <input
-                        [(ngModel)]="loginData.password"
-                        name="password"
-                         required type="password" matInput placeholder="Enter here" />
-                    </mat-form-field>
-                    <div class="container text-center">
-                        <button type="submit" mat-raised-button color="primary">Login</button>
-                        <button type="reset" style="margin-left: 20px" mat-raised-button color="accent">
-                            Reset
-                        </button>
-                    </div>
-                </form>
-                </mat-card>
-            </div>
-        </div>
-    </div> 
-</div>
-</body> -->
-
 <body>
+    <img src="https://auspost.com.au/content/dam/corp/travel-essentials/destination-guides/italy/photo-antipasto-platter-italian-food.jpg">
     <div class="form">
         <h2>Login</h2>
         <form (ngSubmit)="formSubmit()">
@@ -49,15 +7,15 @@
                 <div class="inputbox">
                     <label>Username</label>
                     <input type="text" [(ngModel)]="loginData.username"
-                    name="username" placeholder="example@gmail.com">
+                    name="username" placeholder="Enter Username">
                 </div>
                 <div class="inputbox">
                     <label>Password</label>
                     <input required type="password" [(ngModel)]="loginData.password"
-                    name="password" placeholder="*****">
+                    name="password" placeholder="Enter Password">
                 </div>
                 <div class="inputbox">
-                    <label>Username</label>
+                    
                     <input type="submit" name="" value="Login">
                 </div>
             </div>

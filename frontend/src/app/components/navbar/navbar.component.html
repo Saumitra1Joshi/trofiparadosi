@@ -1,5 +1,7 @@
- <nav class="navbar navbar-expand-lg nav-options">
-  <a class="navbar-brand brand" href="userdashboard">Trofi Paradosi</a>
+<nav class="navbar navbar-expand-lg nav-options fixed-top">
+  <!-- <a href="https://www.fontspace.com/category/tattoo"><img src="https://see.fontimg.com/api/renderfont4/X3R0G/eyJyIjoiZnMiLCJoIjoxMjgsInciOjE1MDAsImZzIjo4NSwiZmdjIjoiIzAwMDAwMCIsImJnYyI6IiNGRkZGRkYiLCJ0IjoxfQ/VHJvZmkgUGFyYWRvc2k/bloodscriptitalicpersonalus-n.png" alt="Tattoo fonts"></a> -->
+  <!-- <a class="navbar-brand brand" href="userdashboard">Trofi Paradosi</a> -->
+  <a href="navbar-brand brand" href="userdashboard"><img class="trofilogo" src="../../../assets/logo3.png" alt="logo"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -12,27 +14,36 @@
       <li class="nav-item">
         <a class="nav-link nav-options" routerLink="/contactus">Contact Us</a>
       </li>
+      <li class="nav-item">
+        <a
+          *ngIf="isLoggedIn && user"
+          class="example-icon favorite-icon ml20 d-flex right"
+          mat-button
+          aria-label="Example icon-button with heart icon"
+          routerLink="/orderhistory">My Orders
+        </a>
+      </li>
     </ul>
 
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-    <a
-      *ngIf="isLoggedIn && user"
-      class="example-icon favorite-icon ml20"
-      mat-button
-      aria-label="Example icon-button with heart icon"
-      href="profile">
-      {{ user.username }}
-    </a>
-    <a
-      (click)="logout()"
-      *ngIf="isLoggedIn"
-      mat-icon-button
-      class="example-icon favorite-icon mr20 ml20"
-      aria-label="Example icon-button with heart icon">
-      Logout
-    </a>
   </div>
+
+  <app-search *ngIf="isLoggedIn && user" ></app-search>
+  
+  <app-cardstatus  *ngIf="isLoggedIn && user" ></app-cardstatus>
+
+  <a
+    *ngIf="isLoggedIn && user"
+    class="example-icon favorite-icon ml20 d-flex right"
+    mat-button
+    aria-label="Example icon-button with heart icon"
+    href="profile">{{user.username}}</a>
+  <a
+    (click)="logout()"
+    *ngIf="isLoggedIn"
+    mat-icon-button
+    class="example-icon favorite-icon mr20 ml20 right"
+    aria-label="Example icon-button with heart icon">
+    Logout
+  </a>
+
 </nav>
