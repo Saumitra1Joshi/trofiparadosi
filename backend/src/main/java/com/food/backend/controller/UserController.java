@@ -1,9 +1,12 @@
 package com.food.backend.controller;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -66,4 +69,12 @@ public class UserController {
 	        return ResponseEntity.ok(ex.getMessage());
 	    }
 	
+//	@ExceptionHandler(UserFoundException.class)   
+//	  public ResponseEntity<?> handleUsernameFoundException(UserFoundException ex){
+//	    Map<String, String> errors = new HashMap<>();
+//	    errors.put("message", ex.getMessage());
+//	    System.out.println("insideexception");
+//	    return new ResponseEntity<>(errors, HttpStatus.CONFLICT);
+//	   }
+//	
 }

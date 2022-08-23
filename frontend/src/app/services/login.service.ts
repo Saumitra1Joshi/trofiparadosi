@@ -42,6 +42,7 @@ export class LoginService {
   {
     localStorage.removeItem("token");
     localStorage.removeItem('user');
+    // localStorage.removeItem("cartitems");
     return true;
   }
 

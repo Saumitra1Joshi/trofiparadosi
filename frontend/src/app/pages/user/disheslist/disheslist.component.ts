@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CartService } from 'src/app/services/cart.service';
 import { DishService } from 'src/app/services/dish.service';
-import { CartItem } from '../carditem';
+import { CartItem } from '../cartitem';
 import { dish } from '../dish';
 
 @Component({
@@ -65,12 +65,12 @@ export class DisheslistComponent implements OnInit {
   }
   addToCart(thedish: dish) {
 
-    console.log(`Adding to cart: ${thedish.name}, ${thedish.unitPrice}`);
+    // console.log(`Adding to cart: ${thedish.name}, ${thedish.unitPrice}`);
 
-    // TODO ... do the real work
-    console.log("before");
+    // // TODO ... do the real work
+    // console.log("before");
     const theCartItem = new CartItem(thedish);
-    console.log(theCartItem);
+    // console.log(theCartItem);
     this.cartService.addtoCart(theCartItem);
   }
 

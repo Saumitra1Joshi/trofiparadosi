@@ -11,7 +11,7 @@ export class NavbarComponent implements OnInit {
 
   isLoggedIn = false;
   user = null;
-
+  role=null;
   constructor(private router:Router,public login:LoginService) { }
 
   ngOnInit(): void {
@@ -21,6 +21,7 @@ export class NavbarComponent implements OnInit {
       this.isLoggedIn = this.login.isLoggedIn();
       this.user = this.login.getUser();
     });
+    console.log(this.user);
   }
   OnLoginClick()
   {
@@ -34,6 +35,7 @@ export class NavbarComponent implements OnInit {
     this.login.logout();
     this.router.navigate(["login"]);
     this.login.loginStatusSubject.next(false);
+    window.location.reload();
   }
   public OnProfile()
   {

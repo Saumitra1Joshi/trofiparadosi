@@ -1,5 +1,20 @@
+
+   
+
 <div class="main-content">
     <div class="section-content section-content-p30">
+        <button (click)="resfilter('Veg')" class="au-btn-submit">
+            Veg
+        </button>
+        <button (click)="resfilter('NonVeg')" class="au-btn-submit">
+            Non-Veg
+        </button>
+        <button (click)="resfilter('Both')" class="au-btn-submit">
+            Both
+        </button>
+        <button routerLink="/orderhistory">
+            My Orders
+        </button>
         <div class="container-fluid">
             <div class="row">
 

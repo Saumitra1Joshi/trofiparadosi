@@ -67,7 +67,7 @@ export class LoginComponent implements OnInit {
             this.router.navigate(['userdashboard']);
             this.login.loginStatusSubject.next(true);
           } else {
-          //   this.login.logout();
+           this.login.logout();
           }
         });
 

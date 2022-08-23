@@ -12,7 +12,7 @@ import { SignupComponent } from './pages/signup/signup.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { HomeComponent } from './pages/home/home.component';
@@ -31,6 +31,10 @@ import { RestaurantlistComponent } from './pages/user/restaurantlist/restaurantl
 import { SearchComponent } from './components/search/search.component';
 import { DishdetailsComponent } from './pages/user/dishdetails/dishdetails.component';
 import { CardstatusComponent } from './components/cardstatus/cardstatus.component';
+import { CarddetailsComponent } from './pages/user/cartdetails/carddetails.component';
+import { CheckoutComponent } from './pages/user/checkout/checkout.component';
+import { OrderhistoryComponent } from './pages/user/orderhistory/orderhistory.component';
+import { OrderinitemComponent } from './pages/user/orderinitem/orderinitem.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +50,11 @@ import { CardstatusComponent } from './components/cardstatus/cardstatus.componen
     RestaurantlistComponent,
     SearchComponent,
     DishdetailsComponent,
-    CardstatusComponent
+    CardstatusComponent,
+    CarddetailsComponent,
+    CheckoutComponent,
+    OrderhistoryComponent,
+    OrderinitemComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +69,8 @@ import { CardstatusComponent } from './components/cardstatus/cardstatus.componen
     MatSnackBarModule,
     MatCardModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    ReactiveFormsModule
   ],
   providers: [authInterceptorProviders,LoginService,UserService],
   bootstrap: [AppComponent]

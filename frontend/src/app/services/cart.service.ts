@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
-import { CartItem } from '../pages/user/carditem';
+import { BehaviorSubject, Subject } from 'rxjs';
+import { CartItem } from '../pages/user/cartitem';
 
 @Injectable({
   providedIn: 'root'
@@ -8,11 +8,10 @@ import { CartItem } from '../pages/user/carditem';
 export class CartService {
 
   cartItems:CartItem[]=[];
-  totalPrice: Subject<number> = new Subject<number>();
-  totalQuantity: Subject<number> = new Subject<number>();
-  
-  constructor() { }
-
+  totalPrice: Subject<number> = new BehaviorSubject<number>(0);
+  totalQuantity: Subject<number> = new BehaviorSubject<number>(0);
+  constructor() {
+   }
   addtoCart(thecartItem:CartItem)
   {
     let alreadyExistsInCart: boolean = false;
@@ -34,6 +33,7 @@ export class CartService {
     else {
       // just add the item to the array
       this.cartItems.push(thecartItem);
+      console.log(this.cartItems);
     }
 
     // compute cart total price and total quantity
@@ -56,13 +56,35 @@ export class CartService {
   }
   logCartData(totalPriceValue: number, totalQuantityValue: number) {
    
-    console.log('Contents of the cart');
+    //console.log('Contents of the cart');
     for (let tempCartItem of this.cartItems) {
       const subTotalPrice = tempCartItem.quantity * tempCartItem.unitPrice;
-      console.log(`name: ${tempCartItem.name}, quantity=${tempCartItem.quantity}, unitPrice=${tempCartItem.unitPrice}, subTotalPrice=${subTotalPrice}`);
+      //console.log(`name: ${tempCartItem.name}, quantity=${tempCartItem.quantity}, unitPrice=${tempCartItem.unitPrice}, subTotalPrice=${subTotalPrice}`);
     }
 
-    console.log(`totalPrice: ${totalPriceValue}, totalQuantity: ${totalQuantityValue}`);
-    console.log('----');
+    // console.log(`totalPrice: ${totalPriceValue}, totalQuantity: ${totalQuantityValue}`);
+    // console.log('----');
+  }
+  decrementQuantity(theCartItem:CartItem)
+  {
+    theCartItem.quantity--;
+
+    if (theCartItem.quantity === 0) {
+      this.remove(theCartItem);
+    }
+    else {
+      this.computeCartTotals();
+    }
+  }
+  remove(theCartItem:CartItem)
+  {
+    const itemIndex = this.cartItems.findIndex( tempCartItem => tempCartItem.id === theCartItem.id );
+
+    // if found, remove the item from the array at the given index
+    if (itemIndex > -1) {
+      this.cartItems.splice(itemIndex, 1);
+
+      this.computeCartTotals();
+    }
   }
 }

@@ -33,7 +33,17 @@ export class DishService {
     return this.getDishes(searchUrl);
   }
   
+  searchRestaurant(therestype:string){
+    const searchresurl=`${this.categoryUrl}/search/findByRestype?restype=${therestype}`;
+    return this.getrestaurant(searchresurl);
+  }
 
+  getrestaurant(restype: string):Observable<restaurant[]>
+  {
+    return this.http.get<GetResponserestaurant >(restype).pipe(
+      map(response => response._embedded.restaurants)
+    );
+  }
 
   getDishes(searchUrl:string):Observable<dish[]>{
     return this.http.get<GetResponsedish>(searchUrl).pipe(

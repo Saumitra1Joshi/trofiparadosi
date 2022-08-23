@@ -13,7 +13,7 @@
                         <a routerLink="/dishes/{{ tempdish.dishid }}" routerLinkActive="active-link">
                             <h1>{{ tempdish.name }}</h1>
                         </a>
-                        <div class="price">{{ tempdish.unitPrice | currency:'USD' }}</div>
+                        <div class="price">{{ tempdish.unitPrice | currency:'INR' }}</div>
                         <button (click)="addToCart(tempdish)" class="btn btn-primary btn-sm">Add to cart</button>
                     </div>
                 </div>

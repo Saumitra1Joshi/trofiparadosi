@@ -21,10 +21,22 @@ export class RestaurantlistComponent implements OnInit {
   Restaurantlist() {
     this.dishService.getrestaurantlist().subscribe(
       data => {
-        console.log('Restaurant List=' + JSON.stringify(data));
+        // console.log('Restaurant List=' + JSON.stringify(data));
         this.restaurant = data;
       }
     );
   }
-
+  resfilter(therestype:string)
+  {
+    if(therestype=='Both')
+    {
+      this.Restaurantlist();
+    }
+    this.dishService.searchRestaurant(therestype).subscribe(
+      data => {
+        // console.log('Restaurant List=' + JSON.stringify(data));
+        this.restaurant = data;
+      }
+    );
+  }
 }
