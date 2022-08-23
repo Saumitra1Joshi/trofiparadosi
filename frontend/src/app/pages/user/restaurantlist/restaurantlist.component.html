@@ -1,0 +1,26 @@
+<div class="bgroup">
+    <button (click)="resfilter('Veg')" class="au-btn-submit btn btn-success">
+        Veg
+    </button>
+    <button (click)="resfilter('NonVeg')" class="au-btn-submit btn btn-danger">
+        Non-Veg
+    </button>
+    <button (click)="resfilter('Both')" class="au-btn-submit btn btn-primary">
+        Both
+    </button>
+</div>
+
+<div class="card-container">
+    <div *ngFor="let tempres of restaurant">
+        <div class="card text-white bg-dark" style="width: 18rem;">
+            <img class="card-img-top" src="{{ tempres.imageurl }}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title" #rname>{{ tempres.restaurantname }}</h5>
+                <p class="card-text price">₹{{ tempres.pricetag}}</p>
+                <p class="card-text">Rating - {{ tempres.ratings}} / 5</p>
+                <a routerLink="/restaurantcategory/{{ tempres.id }}" routerLinkActive="active-link"
+                    class="btn btn-primary">Order Now</a>
+            </div>
+        </div>
+    </div>
+</div>

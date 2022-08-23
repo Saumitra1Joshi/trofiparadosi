@@ -1,0 +1,71 @@
+<body>
+    <h1>Checkout</h1>
+    <div class="main-content page-m">
+    <div class="section-content section-content-p30">
+        <div class="container-fluid">
+
+            <form [formGroup]="checkoutFormGroup" (ngSubmit)="onSubmit()">
+
+                <!-- customer form group -->
+                <div formGroupName="customer" class="form-area">
+
+                    <div class="row">
+                        <div class="col-md-5"> <label>Customer Name</label></div>
+                        <div class="col-md-3">
+                            <div class="input-space">
+                                <input class="form-control" formControlName="customerName" type="text">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-5"> <label>Phone No</label></div>
+                        <div class="col-md-3">
+                            <div class="input-space">
+                                <input class="form-control" formControlName="phoneno"  type="text">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-5"> <label>Email</label></div>
+                        <div class="col-md-3">
+                            <div class="input-space">
+                                <input class="form-control" formControlName="email" type="text">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-5"> <label>Address</label></div>
+                        <div class="col-md-3">
+                            <div class="input-space">
+                                <input class="form-control" formControlName="address" type="text">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                 <!-- Order details -->
+                <div class="order-details">
+                    <h3>Review Your Order</h3>
+
+                    <p>Total Items: {{ totalQuantity }}</p>
+                    <p class="shipping">Shipping: FREE</p>
+                    <p class="price">Total Price: {{ totalPrice | currency: 'INR' }}</p>
+                </div>
+
+                <!-- submit button-->
+                <div class="text-center">
+                    <button type="submit" class="btn btn-success">Pay Now</button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+</body>

@@ -1,4 +1,4 @@
-.example-spacer {
+/* .example-spacer {
     flex: 1 1 auto;
   }
   .ml20 {
@@ -24,4 +24,49 @@
   }
   .mb10 {
     margin-bottom: 10px !important;
-  }
+  } */
+
+  
+body, html{
+  background-color: rgb(16, 15, 15);
+  height: auto;
+}
+h2{
+  color: white;
+  margin-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.navbar{
+  background-color: black;
+  box-shadow: -5px -5px 5px rgb(85, 0, 255),
+              5px 5px 15px rgb(85, 0, 255);
+  margin-bottom: 0px;
+  padding-left: 10px;
+  padding-right: 20px;
+  height: 60px;
+  
+}
+
+.trofilogo{
+  width: 200px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.nav-options{
+  color: aqua;
+}
+
+.brand{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color:rgb(255, 0, 238);
+  font-weight: 700;
+  margin-right: 10px;
+  margin-left: 5px;
+}
+
+a{
+  font-weight: 700;
+}

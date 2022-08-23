@@ -1,0 +1,29 @@
+body{
+    min-height: 100%;
+    position: absolute;
+    background-color: black;
+    color: cyan;
+}
+
+.about-us{
+    margin-top: 130px;
+    margin-left:10%;
+    margin-right: 10%;
+    border: 2px solid rgb(98, 0, 255);
+    border-radius: 5%;
+    padding: 25px;
+    box-shadow: -5px -5px 15px rgb(98, 0, 255),
+                5px 5px 15px rgb(98, 0, 255);
+}
+
+.heading{
+    text-align: center;
+    font-size: xx-large;
+    color: white;
+    font-weight: 700;
+}
+
+h1{
+    color: rgb(9, 177, 9);
+    font-weight: 500;
+}

@@ -1,107 +1,81 @@
-<div class="bootstrap-wrapper">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 offset-md-3">
-                <mat-card>
-                <div class="container text-center">
-                    <img src="../../../assets/th.jpg" alt="" width="160" height="145">
+<body>
+    <!-- <img src="https://auspost.com.au/content/dam/corp/travel-essentials/destination-guides/italy/photo-antipasto-platter-italian-food.jpg">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg"> -->
+    <div class="form">
+        <h2>Sign Up</h2>
+        <form (ngSubmit)="formSubmit()">
+            <div class="input">
+                <div class="inputbox">
+                    <label>Email</label>
+                    <input  [(ngModel)]="user.email"
+                        name="email" required
+                        type="email"  placeholder="Enter here" />
                 </div>
-                
-                <h1 class="text-center">Register Here !!</h1>
-
-                <form (ngSubmit)="formSubmit()">
-                    <!-- Username field -->
-                    <mat-form-field class="full-width" appearance="fill">
-                        <mat-label>Username</mat-label>
-                        <input [(ngModel)]="user.username"
+                <div class="inputbox">
+                    <label>Username</label>
+                    <input [(ngModel)]="user.username"
                         name="username" required
-                        matInput placeholder="Enter here" />
-                        <mat-hint>Username should be unique</mat-hint>
-                    </mat-form-field>
-                    <br><br>
-                    <!-- Password field -->
-                    <mat-form-field class="full-width" appearance="fill">
-                        <mat-label>Password</mat-label>
-                        <input  [(ngModel)]="user.password"
+                        placeholder="Enter here" />
+                </div>
+                <div class="inputbox">
+                    <label>Password</label>
+                    <input  [(ngModel)]="user.password"
                         name="password" required
-                        type="password" matInput placeholder="Enter here" />
-                    </mat-form-field>
-                    <!--Firstname field -->
-                    <mat-form-field class="full-width" appearance="fill">
-                        <mat-label>Firstname</mat-label>
-                        <input  [(ngModel)]="user.firstName"
+                        type="password" placeholder="Enter here" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" />
+                </div>
+                <div class="inputbox">
+                    <label>First Name</label>
+                    <input  [(ngModel)]="user.firstName"
                         name="firstName" required
-                        matInput placeholder="Enter here" />
-                    </mat-form-field>
-                    <!-- Lastname field -->
-                    <mat-form-field class="full-width" appearance="fill">
-                        <mat-label>Lastname</mat-label>
-                        <input  [(ngModel)]="user.lastName"
+                        placeholder="Enter here" />
+                </div>
+                <div class="inputbox">
+                    <label>Last Name</label>
+                    <input  [(ngModel)]="user.lastName"
                         name="lastName" required
-                        matInput placeholder="Enter here" />
-                    </mat-form-field>
-                    <!--DOB field -->
-                    <mat-form-field class="full-width" appearance="fill">
-                        <mat-label>Date of Birth</mat-label>
-                        <input  [(ngModel)]="user.dOB"
+                        placeholder="Enter here" />
+                </div>
+                <div class="inputbox">
+                    <label>Phone Number</label>
+                    <input  [(ngModel)]="user.phoneNo"
+                        name="phoneNo" required
+                        type="number" placeholder="Enter here" />
+                </div>
+                <div class="inputbox">
+                    <label>Date Of Birth</label>
+                    <input  [(ngModel)]="user.dOB"
                         name="dOB" required
-                        matInput placeholder="Enter here" />
-                    </mat-form-field>
-                    <!--Address field -->
-                    <mat-form-field class="full-width" appearance="fill">
-                        <mat-label>Address</mat-label>
-                        <input  [(ngModel)]="user.address"
+                        matInput type="date" placeholder="Enter here" />
+                </div>
+                <div class="inputbox">
+                    <label>Address</label>
+                    <input  [(ngModel)]="user.address"
                         name="address" required
-                        matInput placeholder="Enter here" />
-                    </mat-form-field>
-                    <!--City field -->
-                    <mat-form-field class="full-width" appearance="fill">
-                        <mat-label>City</mat-label>
-                        <input  [(ngModel)]="user.city"
+                        placeholder="Enter here" />
+                </div>
+                <div class="inputbox">
+                    <label>City</label>
+                    <input  [(ngModel)]="user.city"
                         name="city" required
-                        matInput placeholder="Enter here" />
-                    </mat-form-field>
-                    <!--State field -->
-                    <mat-form-field class="full-width" appearance="fill">
-                        <mat-label>State</mat-label>
-                        <input  [(ngModel)]="user.state"
+                        placeholder="Enter here" />
+                </div>
+                <div class="inputbox">
+                    <label>State</label>
+                    <input  [(ngModel)]="user.state"
                         name="state" required
-                         matInput placeholder="Enter here" />
-                    </mat-form-field>
-                    <!--Country field -->
-                    <mat-form-field class="full-width" appearance="fill">
-                        <mat-label>Country</mat-label>
-                        <input  [(ngModel)]="user.country"
+                        placeholder="Enter here" />
+                </div>
+                <div class="inputbox">
+                    <label>Country</label>
+                    <input  [(ngModel)]="user.country"
                         name="country" required
                         matInput placeholder="Enter here" />
-                    </mat-form-field>
-                    <!--Phone field -->
-                    <mat-form-field class="full-width" appearance="fill">
-                        <mat-label>Phone</mat-label>
-                        <input  [(ngModel)]="user.phoneNo"
-                        name="phoneNo" required
-                        type="number" matInput placeholder="Enter here" />
-                    </mat-form-field>
-                    <!--Email field -->
-                    <mat-form-field class="full-width" appearance="fill">
-                        <mat-label>Email</mat-label>
-                        <input  [(ngModel)]="user.email"
-                        name="email" required
-                        type="email" matInput placeholder="Enter here" />
-                    </mat-form-field>
-
-                    <div class="container text-center">
-                        <button type="submit" mat-raised-button color="primary">Register</button>
-                        <button type="reset" style="margin-left: 20px" mat-raised-button color="accent">
-                        Clear
-                        </button>
-                        </div>
-                    
-                    
-                </form>
-                </mat-card>
-
+                    <input type="submit" name="" value="Sign Up">
+                </div>
+                
             </div>
-        </div>
+            <p class="forget">Already have an account?  <a href="login">Click Here</a></p>
+        </form>
+        
     </div>
-</div>
+</body>
